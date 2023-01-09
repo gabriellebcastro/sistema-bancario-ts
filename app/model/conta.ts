@@ -7,13 +7,14 @@ export default abstract class Conta {
     private _cliente: Cliente;
     private _debito: Debito[] = [];
     private _credito: Credito[] = [];
+    debito: Debito = new Debito()
 
     constructor(numero: string, cliente: Cliente) {
         this._numero = numero;
         this._cliente = cliente;
     }
 
-    public get numero() : string {
+    public getNumero() : string {
         return this._numero;
     }
 
@@ -25,7 +26,18 @@ export default abstract class Conta {
         this._cliente = cliente;
     }
 
-    //MÉTODO DEPOSITAR
+    public depositar(valor: number) : Date {
+        const dataDeposito = this.debito._data;
+        this.debito._valor += valor;
+        return dataDeposito;
+    }
 
-    //MÉTODO SACAR
+    public sacar(valor: number) : Date {
+        const dataSaque = this.debito._data;
+
+        if(valor <= this.debito._valor)
+            this.debito._valor -= valor;
+        else console.log("Saldo insuficiente");   
+        return dataSaque;
+    }
 }

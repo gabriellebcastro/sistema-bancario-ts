@@ -1,4 +1,5 @@
 export default class Credito {
+  static credito: any;
     private _valor: number;
     private _data: Date;
   

@@ -1,11 +1,6 @@
 export default class Debito {
-    private _valor: number;
-    private _data: Date;
-  
-    constructor(valor: number, data: Date) {
-      this._valor = valor;
-      this._data = data;
-    }
+    public _valor: number;
+    public _data: Date;
 
     public getValor(): number {
       return this._valor;
