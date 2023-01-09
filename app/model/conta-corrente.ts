@@ -4,8 +4,9 @@ import Cliente from "./cliente.js";
 export default class ContaCorrente extends Conta {
     private _limite: number;
 
-    constructor(numero: string, cliente: Cliente){
+    constructor(numero: string, cliente: Cliente, limite: number){
         super(numero, cliente)
+        this._limite = limite;
     }
 
     public getLimite(): number {
